@@ -16,7 +16,7 @@ export const QuestionComp = ({ data: { q, word, options: { a, b, c, d }, ans }, 
                 duration: 5000,
                 isClosable: true,
                 position: "top",
-                fontSize:"30px"
+                fontSize: "30px"
             })
         }
 
@@ -28,17 +28,17 @@ export const QuestionComp = ({ data: { q, word, options: { a, b, c, d }, ans }, 
                 duration: 5000,
                 isClosable: true,
                 position: "top",
-                fontSize:"30px"
+                fontSize: "30px"
             })
         }
         return toast({
             title: "Sorry! better luck next time",
-                status: "error",
-                description: "your selected answer is incorrect!",
-                duration: 5000,
-                isClosable: true,
-                position: "top",
-                fontSize:"30px"
+            status: "error",
+            description: "your selected answer is incorrect!",
+            duration: 5000,
+            isClosable: true,
+            position: "top",
+            fontSize: "30px"
         })
     }
 
@@ -101,11 +101,12 @@ export const QuestionComp = ({ data: { q, word, options: { a, b, c, d }, ans }, 
                 </GridItem>
             </Grid>
             <Box>
+                <Button marginTop={"20px"} bg="white" border={"1px solid orange"} mt="50px" color={"orange"} _hover={{ bg: "orange", color: "white" }} onClick={()=>setAnswer("")} padding={"10px 30px"} mr="10px">Reset</Button>
                 <Button marginTop={"20px"} bg="white" border={"1px solid orange"} mt="50px" color={"orange"} _hover={{ bg: "orange", color: "white" }} onClick={handleSubmit}>submit Answer</Button>
             </Box>
             <Box justifyContent={"space-around"} display={"flex"} marginTop={"50px"} mx="auto" width={{ base: "95%", md: "80%" }}>
-                <Button bg="white" border={"1px solid blue"} color={"blue"} padding={"10px 20px"} _hover={{ bg: "blue", color: "white" }} onClick={() => {setIndex(index - 1);setAnswer("")}} isDisabled={index <= 0}>Previous</Button>
-                <Button bg="white" border={"1px solid blue"} color={"blue"} padding={"10px 30px"} _hover={{ bg: "blue", color: "white" }} onClick={() => {setIndex(index + 1);setAnswer("")}} isDisabled={index >= length - 1}>Next</Button>
+                <Button bg="white" border={"1px solid blue"} color={"blue"} padding={"10px 20px"} _hover={{ bg: "blue", color: "white" }} onClick={() => { setIndex(index - 1); setAnswer("") }} isDisabled={index <= 0}>Previous</Button>
+                <Button bg="white" border={"1px solid blue"} color={"blue"} padding={"10px 30px"} _hover={{ bg: "blue", color: "white" }} onClick={() => { setIndex(index + 1); setAnswer("") }} isDisabled={index >= length - 1}>Next</Button>
             </Box>
         </Box>
     )
